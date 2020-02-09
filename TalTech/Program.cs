@@ -6,6 +6,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using TalTech;
 
+
 namespace ContosoUniversity
 {
     public class Program
@@ -28,7 +29,8 @@ namespace ContosoUniversity
                 try
                 {
                     var context = services.GetRequiredService<SchoolContext>();
-                    context.Database.EnsureCreated();
+                    // context.Database.EnsureCreated();
+                    DbInitializer.Initialize(context);
                 }
                 catch (Exception ex)
                 {

@@ -3,7 +3,7 @@ using TalTech.Pages.Models;
 using System;
 using System.Linq;
 
-namespace ContosoUniversity.Data
+namespace TalTech.Data
 {
     public static class DbInitializer
     {
