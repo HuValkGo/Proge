@@ -23,5 +23,6 @@ namespace HW2.Data
             modelBuilder.Entity<Enrollment>().ToTable("Enrollment");
             modelBuilder.Entity<Student>().ToTable("Student");
         }
+
     }
 }
