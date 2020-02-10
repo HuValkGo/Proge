@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using TalTech.Data;
 using TalTech.Pages.Models;
 
-namespace TalTech.Pages.Courses
+namespace TalTech.Pages.Instructors
 {
     public class DeleteModel : PageModel
     {
@@ -20,7 +20,7 @@ namespace TalTech.Pages.Courses
         }
 
         [BindProperty]
-        public Course Course { get; set; }
+        public Instructor Instructor { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -29,11 +29,9 @@ namespace TalTech.Pages.Courses
                 return NotFound();
             }
 
-            Course = await _context.Courses
-                .AsNoTracking()
-                .Include(c => c.Department).FirstOrDefaultAsync(m => m.CourseID == id);
+            Instructor = await _context.Instructors.FirstOrDefaultAsync(m => m.ID == id);
 
-            if (Course == null)
+            if (Instructor == null)
             {
                 return NotFound();
             }
@@ -46,15 +44,24 @@ namespace TalTech.Pages.Courses
             {
                 return NotFound();
             }
+            Instructor instructor = await _context.Instructors
+                .Include(i => i.CourseAssignments)
+                .SingleAsync(i => i.ID == id);
 
-            Course = await _context.Courses.FindAsync(id);
-
-            if (Course != null)
+            if (instructor == null)
             {
-                _context.Courses.Remove(Course);
-                await _context.SaveChangesAsync();
+                return RedirectToPage("./Index");
             }
 
+            var departments = await _context.Departments
+                .Where(d => d.InstructorID == id)
+                .ToListAsync();
+            departments.ForEach(d => d.InstructorID = null);
+
+            _context.Instructors.Remove(instructor);
+
+            await _context.SaveChangesAsync();
+   
             return RedirectToPage("./Index");
         }
     }
