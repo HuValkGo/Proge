@@ -3,14 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HW2", "HW2\HW2.csproj", "{3D412F00-40E6-4156-BE70-8D743A852889}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AjaLogi", "AjaLogi", "{57146E9F-96CA-435A-8285-8E903DBD175E}"
 	ProjectSection(SolutionItems) = preProject
 		Recording LOG HUGO.xlsx = Recording LOG HUGO.xlsx
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TalTech", "TalTech\TalTech.csproj", "{5E89802A-6532-4C86-ADC9-D909A350FDF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TalTech", "TalTech\TalTech.csproj", "{5E89802A-6532-4C86-ADC9-D909A350FDF4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,10 +16,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3D412F00-40E6-4156-BE70-8D743A852889}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3D412F00-40E6-4156-BE70-8D743A852889}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3D412F00-40E6-4156-BE70-8D743A852889}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3D412F00-40E6-4156-BE70-8D743A852889}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5E89802A-6532-4C86-ADC9-D909A350FDF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5E89802A-6532-4C86-ADC9-D909A350FDF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E89802A-6532-4C86-ADC9-D909A350FDF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
