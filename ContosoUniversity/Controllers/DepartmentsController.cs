@@ -224,3 +224,5 @@ namespace ContosoUniversity.Controllers
                 return RedirectToAction(nameof(Delete), new { concurrencyError = true, id = department.DepartmentID });
             }
         }
+    }
+}
